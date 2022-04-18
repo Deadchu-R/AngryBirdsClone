@@ -6,12 +6,13 @@ public class Bird : MonoBehaviour
 {
     private Vector3 screenPoint;
     private Vector3 offset;
-    private float dragDistance; // updates every frame
     private Vector3 dragStartPos;
+    private Vector3 dragEndPos;
+    private float dragDistance; // updates every frame
     [SerializeField]
     private float maxDragDistance = 2;
-    private Vector3 dragEndPos;
     private Rigidbody2D rigid;
+    private CircleCollider2D col;
     [SerializeField]
     private float forceFactorX = 1000;
     [SerializeField]
@@ -23,6 +24,10 @@ public class Bird : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        
+    }
     private void OnMouseDown()
     {
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
