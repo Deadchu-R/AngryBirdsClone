@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61469654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.68, y: 3.38, z: 0}
+  m_LocalPosition: {x: 10.68, y: 7.52, z: 0}
   m_LocalScale: {x: 2.4084191, y: 2.165751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -227,7 +227,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 7
 --- !u!60 &61469658
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1376,6 +1376,7 @@ GameObject:
   - component: {fileID: 910042892}
   - component: {fileID: 910042891}
   - component: {fileID: 910042893}
+  - component: {fileID: 910042896}
   - component: {fileID: 910042894}
   - component: {fileID: 910042895}
   m_Layer: 0
@@ -1444,7 +1445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910042890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.93, y: 9.37, z: 0}
+  m_LocalPosition: {x: 1.93, y: 9.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1462,9 +1463,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29764deb0fd2f84aa2059cde6706703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dragEndPos: {x: 0, y: 0, z: 0}
   maxDragDistance: 2
   forceFactorX: 1000
   forceFactorY: 500
+  line: {fileID: 0}
+  resolution: 0
+  velocity: {x: 0, y: 0}
+  yLimit: 0
+  linecastResolution: 0
+  canHit:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &910042894
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1502,6 +1512,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &910042896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910042890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a28bba2a9db03c498efb635e2ddc262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  line: {fileID: 0}
+  resolution: 0
+  velocity: {x: 0, y: 0}
+  yLimit: 0
+  linecastResolution: 0
+  canHit:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1283965244
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2285,7 @@ GameObject:
   - component: {fileID: 2062388306}
   - component: {fileID: 2062388305}
   - component: {fileID: 2062388304}
+  - component: {fileID: 2062388308}
   - component: {fileID: 2062388303}
   - component: {fileID: 2062388307}
   m_Layer: 0
@@ -2297,9 +2328,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29764deb0fd2f84aa2059cde6706703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dragEndPos: {x: 0, y: 0, z: 0}
   maxDragDistance: 2
   forceFactorX: 1000
   forceFactorY: 500
+  line: {fileID: 2138201581}
+  resolution: 30
+  velocity: {x: 0, y: 0}
+  yLimit: 0
+  linecastResolution: 30
+  canHit:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &2062388305
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2381,6 +2421,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.4}
   serializedVersion: 2
   m_Radius: 1.5
+--- !u!114 &2062388308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062388302}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a28bba2a9db03c498efb635e2ddc262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  line: {fileID: 2138201581}
+  resolution: 0
+  velocity: {x: 0, y: 0}
+  yLimit: -5
+  linecastResolution: 0
+  canHit:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &2138201580
 GameObject:
   m_ObjectHideFlags: 0
