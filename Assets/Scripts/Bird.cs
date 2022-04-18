@@ -49,6 +49,7 @@ public class Bird : MonoBehaviour
         velocity.x = -dragEndPos.x * dragDistance  ; velocity.y  = -dragEndPos.y * dragDistance ;
         RenderArc();
     }
+
     private void RenderArc()
     {
         line.positionCount = resolution + 1;
