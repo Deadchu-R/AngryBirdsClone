@@ -18,6 +18,11 @@ public class Bird : MonoBehaviour
     [SerializeField]
     private float forceFactorY = 500;
 
+    public float time = 3;
+    public GameObject gameObject;
+    public Animator birdAnimator;
+   
+
     [Header("Line renderer veriables")]
     public LineRenderer line;
     [Range(2, 30)]
@@ -46,6 +51,7 @@ public class Bird : MonoBehaviour
     }
     private void Update()
     {
+
         velocity.x = -dragEndPos.x * dragDistance  ; velocity.y  = -dragEndPos.y * dragDistance ;
         RenderArc();
     }
@@ -120,6 +126,7 @@ public class Bird : MonoBehaviour
 
     private void OnMouseDown()
     {
+        birdAnimator.gameObject.GetComponent<Animator>().enabled = false;
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
         dragStartPos = gameObject.transform.position;
     }
@@ -142,13 +149,20 @@ public class Bird : MonoBehaviour
             curPosition = dragStartPos + (dragVector.normalized * maxDragDistance);
         }
         transform.position = curPosition;
-        
+
     }
 
     private void OnMouseUp()
     {
+        //birdAnimator.gameObject.GetComponent<Animator>().enabled = true;
         Vector3 dragVector = dragEndPos - dragStartPos;
         rigid.AddForce(new Vector2(-dragVector.x * forceFactorX, -dragVector.y * forceFactorY));
         rigid.gravityScale = 1;
+       
+     
+            Destroy(gameObject, time);
+ 
+        
     }
+
 }
