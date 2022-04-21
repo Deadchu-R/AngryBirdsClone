@@ -683,7 +683,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &286970033
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -800,7 +800,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &373335326
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -931,7 +931,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &479927238
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1224,7 +1224,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &544773145
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1369,7 +1369,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &590088784
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1500,7 +1500,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &594561257
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1981,7 +1981,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1283965247
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2185,7 +2185,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1768617977
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2335,7 +2335,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1832025517
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2839,7 +2839,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &2012986316
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2925,7 +2925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2138201582}
   - component: {fileID: 2138201581}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Trajectory
   m_TagString: Untagged
   m_Icon: {fileID: 0}

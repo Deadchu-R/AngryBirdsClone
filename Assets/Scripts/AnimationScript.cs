@@ -7,12 +7,7 @@ public class AnimationScript : MonoBehaviour
     public Animator birdsAni1;
     public Animator birdsAni2;
     public Animator birdsAni3;
-    public GameObject[] birds = new GameObject[2];
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject[] birds = new GameObject[3];
 
     // Update is called once per frame
     void Update()

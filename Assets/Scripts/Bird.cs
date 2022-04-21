@@ -155,8 +155,9 @@ public class Bird : MonoBehaviour
     private void OnMouseUp()
     {
         //birdAnimator.gameObject.GetComponent<Animator>().enabled = true;
-        Vector3 dragVector = dragEndPos - dragStartPos;
-        rigid.AddForce(new Vector2(-dragVector.x * forceFactorX, -dragVector.y * forceFactorY));
+        Vector3 dragVector = dragStartPos - dragEndPos;
+        int forceFactor = 1000;
+        rigid.AddForce(dragVector * forceFactor);
         rigid.gravityScale = 1;
        
      
