@@ -13,11 +13,11 @@ public class AnimationScript : MonoBehaviour
     void Update()
     {
 
-        if (birds[0] == null)
+        if (birds[0].activeSelf == false)
         {
             birdsAni2.SetBool("isDead", true);
         }
-        if (birds[1] == null)
+        if (birds[1].activeSelf == false)
         {
             birdsAni3.SetBool("isDead", true);
         }

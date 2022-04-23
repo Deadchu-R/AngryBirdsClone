@@ -14,14 +14,14 @@ public class Bird : MonoBehaviour
     private Rigidbody2D rigid;
     private CircleCollider2D col;
     [SerializeField]
-    private float forceFactorX = 1000;
-    [SerializeField]
-    private float forceFactorY = 500;
+    private float forceFactor = 1000;
 
+    bool mouseUpCheck = false;
+    float timer;
     public float time = 3;
     public GameObject gameObject;
     public Animator birdAnimator;
-   
+
 
     [Header("Line renderer veriables")]
     public LineRenderer line;
@@ -38,21 +38,26 @@ public class Bird : MonoBehaviour
     public int linecastResolution;
     public LayerMask canHit;
 
-    // Bird > bird fly > bird speed  >
-    //  CurPos 
-    // if -2 > CurTransform.pos.x > 2 || -2 > CurTransform.pos.y > 2 cant move bird
-    // Start is called before the first frame update
+
     void Start()
     {
-       // gameObject
+
         rigid = GetComponent<Rigidbody2D>();
         g = Mathf.Abs(Physics2D.gravity.y);
 
     }
     private void Update()
     {
-
-        velocity.x = -dragEndPos.x * dragDistance  ; velocity.y  = -dragEndPos.y * dragDistance ;
+        if (mouseUpCheck == true)
+        {
+           
+            if (Time.time > timer)
+            {
+                gameObject.SetActive(false);
+                mouseUpCheck = false;
+            }
+        }
+        velocity.x = -dragEndPos.x * dragDistance; velocity.y = -dragEndPos.y * dragDistance;
         RenderArc();
     }
 
@@ -97,8 +102,8 @@ public class Bird : MonoBehaviour
 
     private Vector3 CalculateLinePoint(float t)
     {
-        float x = velocity.x * t ;
-        float y = (velocity.y * t ) - (g * Mathf.Pow(t, 2) / 2) ;
+        float x = velocity.x * t;
+        float y = (velocity.y * t) - (g * Mathf.Pow(t, 2) / 2);
         return new Vector3(x + transform.position.x, y + transform.position.y);
     }
 
@@ -138,11 +143,7 @@ public class Bird : MonoBehaviour
 
         dragEndPos = curPosition;
         dragDistance = (curPosition - dragStartPos).magnitude; // magnitude is the size of vector
-        //if (dragDistance < maxDragDistance)
-        //{
-       
-        //    dragEndPos = curPosition;
-        //}
+
         if (dragDistance > maxDragDistance)
         {
             Vector3 dragVector = curPosition - dragStartPos;
@@ -154,16 +155,11 @@ public class Bird : MonoBehaviour
 
     private void OnMouseUp()
     {
-        //birdAnimator.gameObject.GetComponent<Animator>().enabled = true;
         Vector3 dragVector = dragStartPos - dragEndPos;
-        int forceFactor = 1000;
         rigid.AddForce(dragVector * forceFactor);
         rigid.gravityScale = 1;
-       
-     
-            Destroy(gameObject, time);
- 
-        
+        timer = Time.time + time;
+        mouseUpCheck = true;
     }
 
 }
