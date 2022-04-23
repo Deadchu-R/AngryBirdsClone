@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
          if (currentHP <= 0)
          {
             Destroy(gameObject);
-            manager.EnemyDestroyed();
+            //manager.EnemyDestroyed();
          }
 
     }
