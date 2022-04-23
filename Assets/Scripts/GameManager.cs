@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] birds;
     public List<Animator> animList;
     private int birdsCount;
+    public GameObject[] turrets;
+    private int turretCount;
 
     private void Start()
     {
@@ -20,12 +22,19 @@ public class GameManager : MonoBehaviour
             animList.Add(birds[i].GetComponent<Animator>());
         }
         birdsCount = birds.Length;
+
+        turrets = GameObject.FindGameObjectsWithTag("Enemy");
+        turretCount = turrets.Length;
     }
     // Update is called once per frame
     void Update()
     {
         for (int i = 0; i < birds.Length; i++) // checking all birds
         {
+            if (birdsCount > 0 && turretCount <=0)
+            {
+                win = true;
+            }
             if (birds.All(birds => birds.activeSelf == false)) // if all birds are not active set lost to true
             {
                 lost = true;
