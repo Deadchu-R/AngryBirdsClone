@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     float fallDamage;
 
+    public GameManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,9 @@ public class Enemy : MonoBehaviour
         {
             currentHP -= platformDamage;
             Debug.Log("GOT pLATFORM DAMAGE HP IS:" + currentHP);
+
         }
+
     }
 
     // Update is called once per frame
@@ -43,6 +47,7 @@ public class Enemy : MonoBehaviour
          if (currentHP <= 0)
          {
             Destroy(gameObject);
+            manager.EnemyDestroyed();
          }
 
     }
