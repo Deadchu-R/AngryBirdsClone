@@ -11,7 +11,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Trajectory
   - Water
   - UI
   - 
@@ -41,9 +41,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 1031776239
+    locked: 0
   - name: Object
     uniqueID: 2553924211
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: UI
+    uniqueID: 239014203
+    locked: 0
+  - name: trajectory
+    uniqueID: 1340958645
     locked: 0
