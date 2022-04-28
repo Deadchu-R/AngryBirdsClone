@@ -32,27 +32,17 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < birds.Length; i++) // checking all birds
-        {
-
+   
             if (birds.All(birds => birds.activeSelf == false)) // if all birds are not active set lost to true
             {
                 lost = true;
             }
-
-        }
-        for (int i = 0; i < turrets.Length; i++) // checking all birds
-        {
-
+     
             if (turrets.All(turrets => turrets == null )) // if all birds are not active set lost to true
             {
                 win = true;
             }
-
-        }
-
-
-       
+    
         if (birds[0].activeSelf == false)
         {
             animList[1].SetBool("isDead", true);
@@ -72,14 +62,6 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    //public void EnemyDestroyed()
-    //{
-    //    turretCount--;
-    //    if (turretCount == 0)
-    //    {
-    //        win = true;
-    //        Debug.Log("Victory");
-    //    }
-    //}
+
 }
 
